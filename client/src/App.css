@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+root,
+html {
+  height: 100vh;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -43,8 +49,16 @@ label {
   text-align: center;
 }
 
+.member-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 .member-item {
+  text-align: center;
   padding: 0.25em 0;
+  min-width: 33.33%;
 }
 
 footer {
