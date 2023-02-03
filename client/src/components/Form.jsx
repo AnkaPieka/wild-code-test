@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import axios from "axios";
+import React, { useState } from "react";
 
-export const Form = () => {
+export const Form = ({ getArgonautesData }) => {
   const [name, setName] = useState("");
 
   const handleInputChange = (event) => {
@@ -14,6 +14,7 @@ export const Form = () => {
 
     try {
       await axios.post("http://localhost:3000/api/argonautes", newArgonaute);
+      getArgonautesData();
       setName("");
     } catch (err) {
       console.log("Error:", err);

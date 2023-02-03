@@ -5,8 +5,6 @@ const ArgonauteCtrl = require("../controllers/argonautes");
 
 router.post("/argonautes", ArgonauteCtrl.createArgonaute);
 
-router.get("/argonautes/:id", ArgonauteCtrl.getOneArgonaute);
-
 router.get("/argonautes", ArgonauteCtrl.getAllArgonautes);
 
 module.exports = router;

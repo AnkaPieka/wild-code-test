@@ -9,12 +9,6 @@ exports.createArgonaute = (req, res, next) => {
     .catch((error) => res.status(400).json("Oups...", { error }));
 };
 
-exports.getOneArgonaute = (req, res, next) => {
-  Argonaute.findOne({ _id: req.params.id })
-    .then((argonaute) => res.status(200).json(argonaute))
-    .catch((error) => res.status(400).json(error));
-};
-
 exports.getAllArgonautes = (req, res, next) => {
   Argonaute.find()
     .then((argonautes) => {
