@@ -1,5 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const argonauteRoutes = require("./routes/argonautes");
 
@@ -16,10 +19,7 @@ app.use((req, res, next) => {
 });
 
 mongoose
-  .connect(
-    "mongodb+srv://Anka:Lv5KAZa2IE5VpaQJ@cluster0.xacirmk.mongodb.net/argonautes?retryWrites=true&w=majority",
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  )
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connexion à MongoDB réussie !"))
   .catch((err) => console.log("Connexion à MongoDB échouée :", err.message));
 
