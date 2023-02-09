@@ -13,7 +13,7 @@ export const Form = ({ getArgonautesData }) => {
     const newArgonaute = { name: name };
 
     try {
-      await axios.post("http://localhost:3000/api/argonautes", newArgonaute);
+      await axios.post("http://localhost:8000/api/argonautes", newArgonaute);
       getArgonautesData();
       setName("");
     } catch (err) {
